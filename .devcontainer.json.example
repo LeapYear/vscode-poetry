@@ -1,0 +1,54 @@
+{
+  "image": "leapyear1/vscode-poetry",
+  "name": "Example Project",
+  "settings": {
+    "editor.rulers": [
+      100
+    ],
+    "editor.formatOnSave": true,
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "python.analysis.typeCheckingMode": "basic",
+    "python.linting.enabled": true,
+    "python.linting.prospectorArgs": [
+      "-s",
+      "veryhigh"
+    ],
+    "python.linting.prospectorEnabled": true,
+    "python.formatting.provider": "black",
+    "python.testing.pytestEnabled": true,
+    "python.testing.pytestArgs": [
+      "-c",
+      "${workspaceFolder}/pyproject.toml",
+      "--rootdir=${workspaceFolder}",
+      "--cov=${workspaceFolder}/src"
+    ],
+    "coverage-gutters.xmlname": "${workspaceFolder}/coverage.xml",
+    "coverage-gutters.coverageFileNames": [
+      "lcov.info",
+      "cov.xml",
+      "coverage.xml",
+      "jacoco.xml"
+    ],
+    "python.analysis.openFilesOnly": false,
+    "python.languageServer": "Pylance",
+    "python.analysis.diagnosticMode": "workspace"
+  },
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
+  ],
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [
+    "aaron-bond.better-comments",
+    "coenraads.bracket-pair-colorizer",
+    "eamodio.gitlens",
+    "editorconfig.editorconfig",
+    "github.vscode-pull-request-github",
+    "ms-python.vscode-pylance",
+    "ms-vsliveshare.vsliveshare",
+    "ryanluker.vscode-coverage-gutters",
+    "tyriar.sort-lines",
+    "vscode-icons-team.vscode-icons",
+    "vscodevim.vim"
+  ],
+  "postCreateCommand": "poetry install"
+}
