@@ -27,5 +27,6 @@ docker login
 * `build-essential` for building wheels
 * git, curl, vim
 * Supports vscode liveshare extension
+* adr-tools
 * Python 3.7.10 or 3.9.2
 * Supports amd64 + arm64
